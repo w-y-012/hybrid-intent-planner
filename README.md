@@ -1,185 +1,127 @@
-# Sophisticated Controllable Agent for Complex RAG Tasks 🧠📚
+# Controllable RAG Agent
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/nir-diamant-759323134/)
-[![Twitter](https://img.shields.io/twitter/follow/NirDiamantAI?label=Follow%20@NirDiamantAI&style=social)](https://twitter.com/NirDiamantAI)
-[![Discord](https://img.shields.io/badge/Discord-Join%20our%20community-7289da?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/8PSA7s5v)
+> 基于 LangGraph 的企业级 RAG 知识图谱问答系统，支持动态意图分析、多跳推理、自适应路由与可视化追踪。
+
+## 🏗️ 系统架构
+用户 Query
+│
+▼
+┌──────────────────────────────────────────────────────┐
+│ LangGraph 工作流 │
+│ │
+│ intent_analyzer → planner → validate → execute → synthesize
+│ │
+│ 5 个节点：意图分析 → 计划生成 → 计划验证 → 执行检索 → 答案合成 │
+└──────────────────────────────────────────────────────┘
+│ │ │
+▼ ▼ ▼
+┌──────────┐ ┌──────────────┐ ┌──────────────┐
+│ Stanza │ │ Neo4j (KG) │ │ Qdrant (向量) │
+│ 依存分析 │ │ 知识图谱查询 │ │ 混合检索 │
+└──────────┘ └──────────────┘ └──────────────┘
+
+## ✨ 核心特性
+
+### 1. 动态意图分析 (`intent_analyzer.py`)
+- **零硬编码**：基于 Stanza Universal Dependencies 的纯特征级疑问判定
+- **递归依存树追踪**：自动识别间接疑问词（如 "教什么课" 中的 "课"）
+- **粘连疑问谓词处理**：处理 "教哪"、"去哪" 等被误分词的情况
+- **被动语态归一化**：自动交换施受关系，匹配 KG 边方向
+- **论元自愈**：Stanza 漏掉的主语/宾语自动从 KG 实体列表或主事件补全
+
+### 2. 自适应路由系统
+| 路由类型 | 触发条件 | 示例 |
+|---------|---------|------|
+| `SINGLE_HOP` | 主谓宾完整，单槽位 | "Hermione保护了谁？" |
+| `MULTI_HOP_CASCADE` | 含定语从句 + 概念消解 | "帮助反派的那个教授教什么课？" |
+| `MULTI_HOP` | 多实体链式查询 | "Harry的对手的老师是谁？" |
+| `CONCEPT_MATCH` | 依存失败但有实体 | "Voldemort" |
+| `SUBGRAPH_CO_OCCUR` | 多实体子图共现 | "Harry和Voldemort之间有什么关系？" |
+| `VECTOR` | 完全降级 | "哈利波特里最勇敢的人是谁？" |
+
+### 3. 知识图谱检索 (`retriever_kg.py`)
+- **实体链接**：O(1) 内存级 HashMap 缓存 + 主动实体名消解
+- **谓词对齐**：双语同义词表 + 向量余弦相似度匹配
+- **K-近邻自愈**：原始谓词未命中时自动泛化到近邻关系
+- **闭环事实修正**：LLM 从文本中推断正确实体名后重新查询
+
+### 4. Schema 类型解析器 (`SchemaTypeResolver`)
+- 在线查询 KG Schema 获取候选标签
+- Embedding 向量余弦相似度动态选择最佳类型
+- 自动适配不同 KG 的标签体系
+
+### 5. 英文特征空间对齐 (HyDE)
+- 中文 Query 自动翻译为英文
+- LLM 生成假设性英文段落增强向量检索
+- 检索效果提升 17%-32%
+
+### 6. 可视化追踪平台 (`simulate_agent.py`)
+- Streamlit 实时执行流追踪
+- 拓扑路由高亮（PyVis 动态图）
+- 终端日志实时捕获
+- State 更新逐行展示
+
+## 📦 技术栈
+
+| 组件 | 技术 |
+|------|------|
+| 工作流编排 | LangGraph + LangChain |
+| 依存句法分析 | Stanza (UD 中文模型) |
+| 知识图谱 | Neo4j (736 实体, 325 关系类型) |
+| 向量检索 | Qdrant + BGE-small-en-v1.5 |
+| 可视化 | Streamlit + PyVis |
+| LLM | OpenAI API / 兼容接口 |
+
+## 🚀 快速开始
+
+### 环境要求
+- Python 3.12+
+- Neo4j (bolt://localhost:7687)
+- Qdrant (localhost:6333)
+
+### 安装
+```bash
+# 克隆仓库
+git clone https://github.com/your-username/Controllable-RAG-Agent.git
+cd Controllable-RAG-Agent
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 下载 Stanza 中文模型（首次运行自动下载）
+python -c "import stanza; stanza.download('zh')"
+# 1. 启动 Neo4j
+neo4j start
+
+# 2. 启动 Qdrant
+docker run -p 6333:6333 qdrant/qdrant
+
+# 3. 运行离线评估
+python executor_agent.py
+浏览器访问 http://localhost:8501
+
+📁 项目结构
+text
+├── intent_analyzer.py      # 动态意图分析编译器
+├── retriever_kg.py          # 知识图谱 + 向量检索
+├── executor_agent.py        # LangGraph 工作流编排
+├── enterprise_evaluation.py # 离线评估 + 在线哨兵
+├── enterprise_governance.py # MCP 沙盒 + 事务治理
+├── functions_for_pipeline.py # 全局配置与工具函数
+├── simulate_agent.py        # Streamlit 可视化追踪
+├── run_optuna_tuning.py     # 贝叶斯超参调优
+└── predicate_config.json    # 谓词双语对照表
+📊 测试用例
+Case	Query	预期路由	预期答案
+1	帮助反派的那个教授教什么课？	MULTI_HOP_CASCADE	Defence Against the Dark Arts
+2	Hermione保护了谁？	SINGLE_HOP	Harry Potter
+3	Severus Snape教哪一门特定的科目？	SINGLE_HOP	Potions
+📝 超参调优
+bash
+python run_optuna_tuning.py
+自动寻找最优的谓词对齐阈值、实体链接阈值等 7 个参数，结果保存至 rag_hyperparameters.json。
+
+<img width="1809" height="804" alt="a58fc593-b94b-47e0-bde8-43ea13918b06" src="https://github.com/user-attachments/assets/e2fa7a39-8f0d-4306-90c1-357544440847" />
+<img width="1809" height="672" alt="3fe733e9-d0b1-4b1c-b950-ae8331a32b0f" src="https://github.com/user-attachments/assets/77f7fdd8-0629-4485-951c-542e877f43a9" />
 
 
-An advanced Retrieval-Augmented Generation (RAG) solution designed to tackle complex questions that simple semantic similarity-based retrieval cannot solve. This project showcases a sophisticated deterministic graph acting as the "brain" of a highly controllable autonomous agent capable of answering non-trivial questions from your own data.
-
-![Demo](graphs/demo.gif)
-
-🚀 Level up with my **[Agents Towards Production](https://github.com/NirDiamant/agents-towards-production)** repository. It delivers horizontal, code-first tutorials that cover every tool and step in the lifecycle of building production-grade GenAI agents, guiding you from spark to scale with proven patterns and reusable blueprints for real-world launches, making it the smartest place to start if you're serious about shipping agents to production.
-
-📚 Explore my **[comprehensive guide on RAG techniques](https://github.com/NirDiamant/RAG_Techniques)** to complement this advanced agent implementation with many other RAG techniques.
-
-🤖 Explore my **[GenAI Agents Repository](https://github.com/NirDiamant/GenAI_Agents)** to complement this advanced agent implementation with many other AI Agents implementations and tutorials.
-
-## 📫 Stay Updated!
-
-<div align="center">
-<table>
-<tr>
-<td align="center">🚀<br><b>Cutting-edge<br>Updates</b></td>
-<td align="center">💡<br><b>Expert<br>Insights</b></td>
-<td align="center">🎯<br><b>Top 0.1%<br>Content</b></td>
-</tr>
-</table>
-
-[![Subscribe to DiamantAI Newsletter](assets/subscribe-button.svg)](https://diamantai.substack.com/?r=336pe4&utm_campaign=pub-share-checklist)
-
-*Join over 20,000 of AI enthusiasts getting unique cutting-edge insights and free tutorials!* ***Plus, subscribers get exclusive early access and special 33% discounts to my book and the upcoming RAG Techniques course!***
-</div>
-
-[![DiamantAI's newsletter](assets/substack_image.png)](https://diamantai.substack.com/?r=336pe4&utm_campaign=pub-share-checklist)
-
-
-<!-- https://github.com/NirDiamant/Controllable-RAG-Agent/blob/main/assets/video_demo.mp4 -->
-<!-- [![YouTube](http://i.ytimg.com/vi/_73OV1z3sTg/hqdefault.jpg)](https://www.youtube.com/watch?v=_73OV1z3sTg) -->
-
-## 🌟 Key Features
-
-- **Sophisticated Deterministic Graph**: Acts as the "brain" of the agent, enabling complex reasoning.
-- **Controllable Autonomous Agent**: Capable of answering non-trivial questions from custom datasets.
-- **Hallucination Prevention**: Ensures answers are solely based on provided data, avoiding AI hallucinations.
-- **Multi-step Reasoning**: Breaks down complex queries into manageable sub-tasks.
-- **Adaptive Planning**: Continuously updates its plan based on new information.
-- **Performance Evaluation**: Utilizes `Ragas` metrics for comprehensive quality assessment.
-
-
-## 🧠 How It Works
-![Solution Schema](graphs/final_graph_schema.jpeg)
-
-1. **PDF Loading and Processing**: Load PDF documents and split them into chapters.
-2. **Text Preprocessing**: Clean and preprocess the text for better summarization and encoding.
-3. **Summarization**: Generate extensive summaries of each chapter using large language models.
-4. **Book Quotes Database Creation**: Create a database for specific questions that will need access to quotes from the book.
-5. **Vector Store Encoding**: Encode the book content and chapter summaries into vector stores for efficient retrieval.
-6. **Question Processing**:
-   - Anonymize the question by replacing named entities with variables.
-   - Generate a high-level plan to answer the anonymized question.
-   - De-anonymize the plan and break it down into retrievable or answerable tasks.
-7. **Task Execution**:
-   - For each task, decide whether to retrieve information or answer based on context.
-   - If retrieving, fetch relevant information from vector stores and distill it.
-   - If answering, generate a response using chain-of-thought reasoning.
-8. **Verification and Re-planning**:
-   - Verify that generated content is grounded in the original context.
-   - Re-plan remaining steps based on new information.
-9. **Final Answer Generation**: Produce the final answer using accumulated context and chain-of-thought reasoning.
-
-## 📊 Evaluation
-
-The solution is evaluated using `Ragas` metrics:
-- Answer Correctness
-- Faithfulness
-- Answer Relevancy
-- Context Recall
-- Answer Similarity
-
-## 🔍 Use Case: Harry Potter Book Analysis
-
-The algorithm was tested using the first Harry Potter book, allowing for monitoring of the model's reliance on retrieved information versus pre-trained knowledge. This choice enables us to verify whether the model is using its pre-trained knowledge or strictly relying on the retrieved information from vector stores.
-
-### Example Question
-**Q: How did the protagonist defeat the villain's assistant?**
-
-To solve this question, the following steps are necessary:
-
-1. Identify the protagonist of the plot.
-2. Identify the villain.
-3. Identify the villain's assistant.
-4. Search for confrontations or interactions between the protagonist and the villain.
-5. Deduce the reason that led the protagonist to defeat the assistant.
-
-The agent's ability to break down and solve such complex queries demonstrates its sophisticated reasoning capabilities.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.8+
-- API key for your chosen LLM provider
-
-### Installation (without Docker)
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/NirDiamant/Controllable-RAG-Agent.git
-   cd Controllable-RAG-Agent
-   ```
-2. Set up environment variables:
-   Create a `.env` file in the root directory with your API key: 
-   ```
-   OPENAI_API_KEY=
-   GROQ_API_KEY=
-   ```
-   you can look at the `.env.example` file for reference.
-
-## using Docker
-3. run the following command to build the docker image
-   ```sh
-   docker-compose up --build
-   ```
-
-## Installation (without Docker)
-3. Install required packages:
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-### Usage
-
-1. Explore the step-by-step tutorial: `sophisticated_rag_agent_harry_potter.ipynb`
-
-2. Run real-time agent visualization (no docker):
-   ```sh
-   streamlit run simulate_agent.py
-   ```
-
-3. Run real-time agent visualization (with docker):
-   open your browser and go to `http://localhost:8501/`
-
-## 🛠️ Technologies Used
-
-- LangChain
-- FAISS Vector Store
-- Streamlit (for visualization)
-- Ragas (for evaluation)
-- Flexible integration with various LLMs (e.g., OpenAI GPT models, Groq, or others of your choice)
-
-## 💡 Heuristics and Techniques
-
-1. Encoding both book content in chunks, chapter summaries generated by LLM, and quotes from the book.<br>
-2. Anonymizing the question to create a general plan without biases or pre-trained knowledge of any LLM involved.<br>
-3. Breaking down each task from the plan to be executed by custom functions with full control.<br>
-4. Distilling retrieved content for better and accurate LLM generations, minimizing hallucinations.<br>
-5. Answering a question based on context using a Chain of Thought, which includes both positive and negative examples, to arrive at a well-reasoned answer rather than just a straightforward response.<br>
-6. Content verification and hallucination-free verification as suggested in "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection" - https://arxiv.org/abs/2310.11511.<br>
-7. Utilizing an ongoing updated plan made by an LLM to solve complicated questions. Some ideas are derived from "Plan-and-Solve Prompting" - https://arxiv.org/abs/2305.04091 and the "babyagi" project - https://github.com/yoheinakajima/babyagi.<br>
-8. Evaluating the model's performance using `Ragas` metrics like answer correctness, faithfulness, relevancy, recall, and similarity to ensure high-quality answers.<br>
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
-
-## 📚 Learn More
-
-- [Lecture Video](https://www.youtube.com/watch?v=orhV7ZMSRyM&t=33s&ab_channel=DiamantAI)
-- [Blog Post Article](https://open.substack.com/pub/diamantai/p/controllable-agent-for-complex-rag?r=336pe4&utm_campaign=post&utm_medium=web)
-
-## 🙏 Acknowledgements
-
-Special thanks to Elad Levi for the valuable advice and ideas.
-
-## 📄 License
-
-This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
-
----
-
-⭐️ If you find this repository helpful, please consider giving it a star!
-
-Keywords: RAG, Retrieval-Augmented Generation, Agent, Langgraph, NLP, AI, Machine Learning, Information Retrieval, Natural Language Processing, LLM, Embeddings, Semantic Search
