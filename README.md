@@ -121,7 +121,7 @@ bash
 python run_optuna_tuning.py
 自动寻找最优的谓词对齐阈值、实体链接阈值等 7 个参数，结果保存至 rag_hyperparameters.json。
 
-<img width="1809" height="804" alt="a58fc593-b94b-47e0-bde8-43ea13918b06" src="https://github.com/user-attachments/assets/e2fa7a39-8f0d-4306-90c1-357544440847" />
-<img width="1809" height="672" alt="3fe733e9-d0b1-4b1c-b950-ae8331a32b0f" src="https://github.com/user-attachments/assets/77f7fdd8-0629-4485-951c-542e877f43a9" />
+<img width="1809" height="1298" alt="🤖 RAG Agent 实时追踪平台" src="https://github.com/user-attachments/assets/2d4277e1-9b9d-4dcb-84b7-da3d83c96bea" />
+
 
 
