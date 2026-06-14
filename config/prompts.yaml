@@ -1,0 +1,117 @@
+# config/prompts.yaml
+anonymize:
+  template: |
+    请将以下问题中的具体实体/专有名词替换为占位符（如 [实体1], [实体2]），并返回映射关系。
+    问题: {question}
+    输出格式: JSON {{"anonymized_question": "...", "mapping": {{"[实体1]": "原名", ...}}, "explanation": "..."}}
+  input_variables: ["question"]
+
+deanon:
+  template: |
+    根据以下映射表，将计划中的占位符还原为原始实体名称。
+    计划: {plan}
+    映射: {mapping}
+    输出格式: JSON {{"plan": ["还原后的步骤1", "还原后的步骤2", ...]}}
+  input_variables: ["plan", "mapping"]
+
+planner:
+  template: |
+    你是一个多跳知识图谱推理规划专家。请严格按以下步骤拆解问题：
+    【规则】
+    1. 严禁直接查询抽象词（如“反派”“课程”“教授”）。必须先调用 `resolve_generic` 将其映射为图谱中的具体实体名。
+    2. 每一步只能执行一个原子操作：实体解析、关系查询或属性获取。
+    3. 关系名称必须与图谱实际边标签一致（如 helps, teaches, knows），不可臆造。
+    
+    【输出格式】（严格 JSON，不要解释）
+    {{
+      "steps": [
+        {"action": "resolve", "term": "泛指词", "target_type": "期望类型"},
+        {"action": "query_relation", "subject": "上一步解析的实体", "relation": "边标签", "direction": "out"},
+        {"action": "query_relation", "subject": "上一步得到的实体", "relation": "边标签", "direction": "out"}
+      ]
+    }}
+    
+    用户问题: {question}
+  input_variables: ["question"]
+
+
+break_down_plan:
+  template: |
+    请将以下高层计划拆解为更具体的原子操作指令。
+    计划: {plan}
+    输出格式: JSON {{"steps": ["子步骤1", "子步骤2", ...]}}
+  input_variables: ["plan"]
+
+task_handler:
+  template: |
+    根据当前任务步骤，决定应使用的工具或检索目标。
+    当前步骤: {step}
+    上下文: {curr_context}
+    输出格式: JSON {{"query": "检索查询词", "curr_context": "...", "tool": "retrieve_chunks|retrieve_summaries|retrieve_quotes|answer_from_context"}}
+  input_variables: ["step", "curr_context"]
+
+replanner:
+  template: |
+    当前检索上下文不足，请基于历史执行步骤与现有上下文重新规划后续步骤。
+    问题: {question}
+    已有上下文: {aggregated_context}
+    历史步骤: {past_steps}
+    输出格式: JSON {{"steps": ["新步骤1", ...]}}
+  input_variables: ["question", "aggregated_context", "past_steps"]
+
+can_be_answered:
+  template: |
+    仅基于以下上下文，能否准确回答问题？请回答 true 或 false。
+    上下文: {context}
+    问题: {question}
+    输出格式: JSON {{"can_be_answered": true/false}}
+  input_variables: ["question", "context"]
+
+is_grounded:
+  template: |
+    校验以下答案是否严格基于提供的上下文与知识图谱关系生成，是否存在幻觉。
+    上下文: {context}
+    答案: {answer}
+    输出格式: JSON {{"grounded_on_facts": true/false, "reason": "详细校验依据"}}
+  input_variables: ["context", "answer"]
+
+keep_relevant:
+  template: |
+    从以下检索文档中提取与问题最直接相关的核心内容，过滤无关噪声。
+    问题: {query}
+    文档: {retrieved_documents}
+    输出格式: JSON {{"relevant_content": "提取后的纯文本..."}}
+  input_variables: ["query", "retrieved_documents"]
+
+is_distilled_ground:
+  template: |
+    校验提炼后的内容是否忠实于原始上下文。
+    提炼内容: {distilled_content}
+    原始上下文: {original_context}
+    输出格式: JSON {{"grounded": true/false, "explanation": "..."}}
+  input_variables: ["distilled_content", "original_context"]
+
+# 🆕 2026 新增模板
+dynamic_plan:
+  template: |
+    作为自适应规划引擎，请根据当前检索策略与实体关系，生成动态执行路径。
+    问题: {query}
+    策略: {strategy}
+    上下文预览: {context_preview}
+    输出格式: JSON {{"steps": ["动态步骤1", "动态步骤2"]}}
+  input_variables: ["query", "strategy", "context_preview"]
+
+execute_step:
+  template: |
+    执行当前步骤：{step}
+    基于上下文：{context}
+    直接输出该步骤的推理结果或中间数据，不要附加解释。
+  input_variables: ["context", "step"]
+
+final_respond:
+  template: |
+    综合以下步骤的执行结果与完整上下文，生成最终专业回答。要求：结构清晰、引用准确、无幻觉。
+    问题: {query}
+    步骤结果: {steps_result}
+    完整上下文: {context}
+  input_variables: ["query", "steps_result", "context"]

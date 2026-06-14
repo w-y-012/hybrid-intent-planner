@@ -1,0 +1,1009 @@
+{
+  "STUDIES": [
+    "学",
+    "学习",
+    "研究",
+    "就读"
+  ],
+  "HELPS": [
+    "helps",
+    "帮助",
+    "协助",
+    "援助",
+    "支持",
+    "辅助",
+    "保护",
+    "守卫",
+    "防御"
+  ],
+  "PROTECTS": [
+    "protects"
+  ],
+  "HEADS": [
+    "heads"
+  ],
+  "SELLS": [
+    "sells"
+  ],
+  "RECOGNIZES": [
+    "recognizes"
+  ],
+  "WANTS_TO_SEE_AGAIN": [
+    "wants_to_see_again"
+  ],
+  "DESIRES": [
+    "desires"
+  ],
+  "TOOK": [
+    "took"
+  ],
+  "RESPONDS_TO_COMPLIMENT": [
+    "responds_to_compliment"
+  ],
+  "IS_CARRYING": [
+    "is_carrying"
+  ],
+  "KNOWS_HOW_TO_GET_PAST": [
+    "knows_how_to_get_past"
+  ],
+  "BOUNDED_TO": [
+    "bounded_to"
+  ],
+  "ASKS_ABOUT_ORIGIN": [
+    "asks_about_origin"
+  ],
+  "CALLS_OUT": [
+    "calls_out"
+  ],
+  "EYED": [
+    "eyed"
+  ],
+  "SET_AGAINST": [
+    "set_against"
+  ],
+  "SHOTS_A_SHARP_LOOK_AT": [
+    "shots_a_sharp_look_at"
+  ],
+  "USES_FOR_NAME": [
+    "uses_for_name"
+  ],
+  "GLOWED_ABOVE": [
+    "glowed_above"
+  ],
+  "USES_MATERIAL": [
+    "uses_material"
+  ],
+  "COMMENTED_ON_WAND": [
+    "commented_on_wand"
+  ],
+  "FORCES": [
+    "forces"
+  ],
+  "INFORMED_BY": [
+    "告知",
+    "得知",
+    "通知"
+  ],
+  "WEARS": [
+    "wears"
+  ],
+  "SNATCHES": [
+    "snatches"
+  ],
+  "COMES_IN_TO_HALL": [
+    "comes_in_to_hall"
+  ],
+  "WANTS_TO_BEAT": [
+    "wants_to_beat"
+  ],
+  "LEADS_TO_VICTORY_FOR": [
+    "leads_to_victory_for"
+  ],
+  "RECEIVES_MAIL": [
+    "receives_mail"
+  ],
+  "SPOTS": [
+    "spots"
+  ],
+  "CHASES": [
+    "chases"
+  ],
+  "GAINED_POSSESSION_OF": [
+    "夺取",
+    "获得"
+  ],
+  "HURTS": [
+    "hurts"
+  ],
+  "NERVOUS_ABOUT": [
+    "nervous_about"
+  ],
+  "WAVED_AT": [
+    "waved_at"
+  ],
+  "ATTENDS_CLASSES_AT": [
+    "attends_classes_at"
+  ],
+  "INVITES": [
+    "invites"
+  ],
+  "LOOKED_PIERCINGLY_AT": [
+    "looked_piercingly_at"
+  ],
+  "DISPUTES": [
+    "disputes"
+  ],
+  "FROWNS_AT": [
+    "frowns_at"
+  ],
+  "POKED": [
+    "poked"
+  ],
+  "SMASHES": [
+    "smashes"
+  ],
+  "TAUNTS": [
+    "taunts"
+  ],
+  "PARADED_AROUND": [
+    "paraded_around"
+  ],
+  "SWAPPED_FOR": [
+    "swapped_for"
+  ],
+  "GASPED_TO": [
+    "gasped_to"
+  ],
+  "IMPRESSIONED_BY": [
+    "impressioned_by"
+  ],
+  "PUTS_TO_SLEEP": [
+    "puts_to_sleep"
+  ],
+  "TUGS": [
+    "tugs"
+  ],
+  "IS_FRIENDLY_WITH": [
+    "is_friendly_with"
+  ],
+  "MIXED_UP_WITH": [
+    "混淆",
+    "牵连"
+  ],
+  "KNOWS_SHORTCUT_TO": [
+    "knows_shortcut_to"
+  ],
+  "DOES_NOT_GO_TO": [
+    "does_not_go_to"
+  ],
+  "WARNED_ABOUT_MESSING_AROUND": [
+    "warned_about_messing_around"
+  ],
+  "EXPLAINS_SECRET": [
+    "explains_secret"
+  ],
+  "WORKS_AS_CARETAKER": [
+    "看守",
+    "管理员",
+    "门卫"
+  ],
+  "SNAPPED_ABOUT_VACATION": [
+    "snapped_about_vacation"
+  ],
+  "SOBS_INTO": [
+    "sobs_into"
+  ],
+  "JUMPED_ON": [
+    "jumped_on"
+  ],
+  "LEVITATES": [
+    "levitates"
+  ],
+  "ATTEMPTS_TO_OPEN": [
+    "attempts_to_open"
+  ],
+  "ASKS_ABOUT_GROWTH_RATE": [
+    "asks_about_growth_rate"
+  ],
+  "IS_FEARED_BY": [
+    "is_feared_by"
+  ],
+  "CHEERS_FOR": [
+    "cheers_for"
+  ],
+  "SIMILAR_TO": [
+    "similar_to"
+  ],
+  "NOTICES_GLITTERING": [
+    "notices_glittering"
+  ],
+  "SCRAMBLED_BACK": [
+    "scrambled_back"
+  ],
+  "ASKS_FOR_SECOND": [
+    "asks_for_second"
+  ],
+  "CELEBRATES": [
+    "celebrates"
+  ],
+  "IGNORED": [
+    "ignored"
+  ],
+  "MAKES_STUDY_SCHEDULES_FOR": [
+    "makes_study_schedules_for"
+  ],
+  "NAGS": [
+    "nags"
+  ],
+  "WORRIED_ABOUT_BEING_SORTED_TO": [
+    "worried_about_being_sorted_to"
+  ],
+  "FLATTERS": [
+    "flatters"
+  ],
+  "LOCKS_WITH": [
+    "locks_with"
+  ],
+  "CONVINCED": [
+    "convinced"
+  ],
+  "JINXES": [
+    "jinxes"
+  ],
+  "OBSERVES_DEAD": [
+    "observes_dead"
+  ],
+  "WHISPERS": [
+    "whispers"
+  ],
+  "CASTS_SPELL": [
+    "casts_spell"
+  ],
+  "IMMOBILIZED": [
+    "immobilized"
+  ],
+  "SUGGESTS_VISIT": [
+    "suggests_visit"
+  ],
+  "DOUBTS_ACCURACY_OF_FATE": [
+    "doubts_accuracy_of_fate"
+  ],
+  "GUARANTEES_SAFETY_OF": [
+    "guarantees_safety_of"
+  ],
+  "REMINDED_OF": [
+    "reminded_of"
+  ],
+  "REPRIMAND": [
+    "reprimand"
+  ],
+  "GRABBED_KEY": [
+    "grabbed_key"
+  ],
+  "NEEDED_ACCESS": [
+    "needed_access"
+  ],
+  "PLAYS": [
+    "plays"
+  ],
+  "DIVE_AROUND": [
+    "dive_around"
+  ],
+  "INTERVENES": [
+    "干预",
+    "介入"
+  ],
+  "SHAKES_HANDS_WITH": [
+    "shakes_hands_with"
+  ],
+  "CAN_AFFORD_TO_LOSE_POINTS": [
+    "can_afford_to_lose_points"
+  ],
+  "IS_MARCHING_TOWARD": [
+    "走向",
+    "行进"
+  ],
+  "INSTRUCTS": [
+    "教",
+    "教授",
+    "授课",
+    "指导",
+    "教书",
+    "instructs"
+  ],
+  "INTENDS_TO_REACH": [
+    "intends_to_reach"
+  ],
+  "DISRESPECTS": [
+    "disrespects"
+  ],
+  "LEERS_AT": [
+    "leers_at"
+  ],
+  "ORDERED_TO_GO_TO_HOSPITAL_WING": [
+    "ordered_to_go_to_hospital_wing"
+  ],
+  "AWARDS_PENALTY_TO": [
+    "awards_penalty_to"
+  ],
+  "DETESTS": [
+    "detests"
+  ],
+  "BUSTLED_OVER": [
+    "bustled_over"
+  ],
+  "SEPARATES_FROM": [
+    "separates_from"
+  ],
+  "LIKES": [
+    "likes"
+  ],
+  "LEAVES": [
+    "leaves"
+  ],
+  "CAUSES_DEMISE": [
+    "causes_demise"
+  ],
+  "HATES": [
+    "讨厌",
+    "恨",
+    "憎恶"
+  ],
+  "INTIMIDATES": [
+    "intimidates"
+  ],
+  "SHARES_FEELING": [
+    "shares_feeling"
+  ],
+  "WILL_GET_SHOCK": [
+    "will_get_shock"
+  ],
+  "DRINKS_BLOOD_OF": [
+    "drinks_blood_of"
+  ],
+  "APPROACHED": [
+    "approached"
+  ],
+  "GUIDES": [
+    "guides"
+  ],
+  "HOPES_TO_HELP": [
+    "hopes_to_help"
+  ],
+  "DIRECTS": [
+    "directs"
+  ],
+  "IS_UNCLE_OF": [
+    "is_uncle_of"
+  ],
+  "FILLS": [
+    "fills"
+  ],
+  "HUSHING_UP": [
+    "hushing_up"
+  ],
+  "REDUCES_NOISE_OF": [
+    "reduces_noise_of"
+  ],
+  "SAYS_CANNOT_BE_INTERFERED_WITH": [
+    "不可干预",
+    "禁止插手"
+  ],
+  "HUNTS": [
+    "hunts"
+  ],
+  "REMEMBER_DETENTION": [
+    "remember_detention"
+  ],
+  "YELLED_AT": [
+    "yelled_at"
+  ],
+  "DECLINES": [
+    "declines"
+  ],
+  "ORDERED_TO_SILENCE": [
+    "ordered_to_silence"
+  ],
+  "DESCRIBES_ROLE_OF": [
+    "describes_role_of"
+  ],
+  "MISUNDERSTANDS": [
+    "misunderstands"
+  ],
+  "DISCUSSES_FATE": [
+    "discusses_fate"
+  ],
+  "CLAPS": [
+    "claps"
+  ],
+  "PERFORMS": [
+    "performs"
+  ],
+  "LANDS_NEXT_TO": [
+    "lands_next_to"
+  ],
+  "PREPARES_FOOD_IN": [
+    "prepares_food_in"
+  ],
+  "PARTICIPATED_IN": [
+    "participated_in"
+  ],
+  "STEERS_INSIDE": [
+    "steers_inside"
+  ],
+  "COACHES": [
+    "coaches"
+  ],
+  "GAVE_GAME_PLAN": [
+    "gave_game_plan"
+  ],
+  "RELEASES": [
+    "releases"
+  ],
+  "INVENTS": [
+    "invents"
+  ],
+  "FEEDS": [
+    "feeds"
+  ],
+  "THREATENS_TO_DESTROY": [
+    "threatens_to_destroy"
+  ],
+  "ASSIGNED_TO_GROUP": [
+    "assigned_to_group"
+  ],
+  "LIES_TO": [
+    "lies_to"
+  ],
+  "IS_STUNNED_BY": [
+    "is_stunned_by"
+  ],
+  "ALLEGES": [
+    "alleges"
+  ],
+  "MENTIONED_BROOMS": [
+    "mentioned_brooms"
+  ],
+  "STANDS_TRANSFIXED_WITH": [
+    "stands_transfixed_with"
+  ],
+  "CREATOR_OF": [
+    "creator_of"
+  ],
+  "MELTS_CAULDRON_OF": [
+    "melts_cauldron_of"
+  ],
+  "DID_NOT_DARE_ATTACK": [
+    "did_not_dare_attack"
+  ],
+  "SUFFERS_FROM": [
+    "suffers_from"
+  ],
+  "IS_PASSWORD_FOR": [
+    "is_password_for"
+  ],
+  "THROWS": [
+    "throws"
+  ],
+  "REFEREES": [
+    "referees"
+  ],
+  "TREATS_INJURY": [
+    "treats_injury"
+  ],
+  "REACHED_NAME_DURING_ROLL_CALL": [
+    "reached_name_during_roll_call"
+  ],
+  "READ": [
+    "read"
+  ],
+  "REPORTS_ON": [
+    "reports_on"
+  ],
+  "CLEANS": [
+    "cleans"
+  ],
+  "DODGED": [
+    "dodged"
+  ],
+  "MARRIED": [
+    "married"
+  ],
+  "WILL_RETURN": [
+    "will_return"
+  ],
+  "WRESTLES_TO_THE_GROUND": [
+    "wrestles_to_the_ground"
+  ],
+  "SUPPORTS": [
+    "supports"
+  ],
+  "DROPS_OBJECT_ON": [
+    "drops_object_on"
+  ],
+  "TRIED_TO_TRANSFORM": [
+    "tried_to_transform"
+  ],
+  "BECAME_MORE_RELAXED": [
+    "became_more_relaxed"
+  ],
+  "DISMISSES": [
+    "dismisses"
+  ],
+  "ENCOURAGED": [
+    "encouraged"
+  ],
+  "MUTTERED": [
+    "muttered"
+  ],
+  "PACKS": [
+    "packs"
+  ],
+  "REPEATS_RULES_OF": [
+    "repeats_rules_of"
+  ],
+  "LOST_POWERS": [
+    "lost_powers"
+  ],
+  "DERIVES_IDEA_FROM": [
+    "derives_idea_from"
+  ],
+  "PRACTICES_LEG_LOCKER_CURSE": [
+    "practices_leg_locker_curse"
+  ],
+  "HAS_JOB": [
+    "has_job"
+  ],
+  "THUNDERED_ABOUT_RESIGNATION": [
+    "thundered_about_resignation"
+  ],
+  "COUNTS_DOWN_TO": [
+    "counts_down_to"
+  ],
+  "PINS_AGAINST_WALL": [
+    "pins_against_wall"
+  ],
+  "GETS_ON_WRONG_SIDE_OF": [
+    "gets_on_wrong_side_of"
+  ],
+  "BORROW": [
+    "borrow"
+  ],
+  "BLOCKS_PATH": [
+    "blocks_path"
+  ],
+  "CAUGHT_SIGHT_OF": [
+    "caught_sight_of"
+  ],
+  "EXCHANGES_LOOKS_WITH": [
+    "对视",
+    "对看",
+    "交换眼神"
+  ],
+  "OFFERS_MERINGUE": [
+    "offers_meringue"
+  ],
+  "AVOIDS_LISTENING_TO": [
+    "avoids_listening_to"
+  ],
+  "REJOICES": [
+    "rejoices"
+  ],
+  "PUSHES_OFF_PIER": [
+    "pushes_off_pier"
+  ],
+  "PATTS_ON_SHOULDER": [
+    "patts_on_shoulder"
+  ],
+  "IS_FOUND_ON_ROOF_OF": [
+    "is_found_on_roof_of"
+  ],
+  "TRAVELLED_TO": [
+    "travelled_to"
+  ],
+  "THINKS_IS_UNDER_CLOAK": [
+    "thinks_is_under_cloak"
+  ],
+  "NOTES_ABSENCE_OF": [
+    "notes_absence_of"
+  ],
+  "FOLLOWS": [
+    "follows"
+  ],
+  "SPENDS_AFTERNOON_WITH": [
+    "spends_afternoon_with"
+  ],
+  "DECEIVES": [
+    "deceives"
+  ],
+  "BELIEVES_FORGOT_INSTRUCTION": [
+    "believes_forgot_instruction"
+  ],
+  "HAS_SCAR": [
+    "has_scar"
+  ],
+  "IMAGINES_BECOMING_ASSISTANT_OF": [
+    "imagines_becoming_assistant_of"
+  ],
+  "PLEADS_TO": [
+    "pleads_to"
+  ],
+  "HAS_NO_MONEY_FOR_CANDY_WITH": [
+    "has_no_money_for_candy_with"
+  ],
+  "HAS_SHAMEFUL_MEMORY_OF": [
+    "has_shameful_memory_of"
+  ],
+  "STREAKS_AFTER": [
+    "streaks_after"
+  ],
+  "BELIEVED_HAD_GOOD_REASON": [
+    "believed_had_good_reason"
+  ],
+  "MOUTHED": [
+    "mouthed"
+  ],
+  "FRIED": [
+    "fried"
+  ],
+  "LEFT_BEHIND": [
+    "left_behind"
+  ],
+  "RIDES": [
+    "骑乘",
+    "乘坐",
+    "驾驶"
+  ],
+  "STROKES": [
+    "strokes"
+  ],
+  "WAITS_FOR": [
+    "waits_for"
+  ],
+  "CAME_TO_A_SACNTUAL_HALT_IN_FRONT_OF": [
+    "came_to_a_sacntual_halt_in_front_of"
+  ],
+  "LEARN_NAMES_OF_MOONS_OF": [
+    "learn_names_of_moons_of"
+  ],
+  "CHECKMATES": [
+    "checkmates"
+  ],
+  "RELIEVED_TO_FIND_OUT": [
+    "relieved_to_find_out"
+  ],
+  "FORECASTED": [
+    "forecasted"
+  ],
+  "PAYS": [
+    "pays"
+  ],
+  "IS_CALLED_A_MUGGLE_BY": [
+    "is_called_a_muggle_by"
+  ],
+  "REGROWS": [
+    "regrows"
+  ],
+  "RUN_BY": [
+    "由管理",
+    "运行"
+  ],
+  "BUCKLED": [
+    "buckled"
+  ],
+  "TRY_TO_KNOCK_OFF": [
+    "try_to_knock_off"
+  ],
+  "TREATED_IMPROPERLY_BY": [
+    "treated_improperly_by"
+  ],
+  "HUMS": [
+    "hums"
+  ],
+  "MOUNTS": [
+    "mounts"
+  ],
+  "UNWRAP": [
+    "unwrap"
+  ],
+  "SOUNDS_LIKE": [
+    "sounds_like"
+  ],
+  "LOCATED_ON": [
+    "located_on"
+  ],
+  "WILL_PLAY_QUIDDITCH_FOR_ENGLAND": [
+    "will_play_quidditch_for_england"
+  ],
+  "SCORED": [
+    "scored"
+  ],
+  "EXPECTS_TO_FINISH_OFF": [
+    "expects_to_finish_off"
+  ],
+  "BOASTS_ABOUT": [
+    "boasts_about"
+  ],
+  "CHALLENGES_TO_DUEL": [
+    "challenges_to_duel"
+  ],
+  "DENIES": [
+    "denies"
+  ],
+  "MOURNS": [
+    "mourns"
+  ],
+  "REFERS_TO_AS_BUNGLER": [
+    "refers_to_as_bungler"
+  ],
+  "PEERED_SKYWARD": [
+    "peered_skyward"
+  ],
+  "SHOWED_WAY": [
+    "showed_way"
+  ],
+  "WHITTLED": [
+    "whittled"
+  ],
+  "POISONOUS_FANGS": [
+    "poisonous_fangs"
+  ],
+  "SEES_THROUGH_CURTAINS": [
+    "sees_through_curtains"
+  ],
+  "WRITES": [
+    "writes"
+  ],
+  "MENTIONS_AS_POTENTIAL_MINISTER": [
+    "mentions_as_potential_minister"
+  ],
+  "PATTED_AROUND_NECK": [
+    "patted_around_neck"
+  ],
+  "NURSES": [
+    "nurses"
+  ],
+  "TAPS_ON_GLASS": [
+    "taps_on_glass"
+  ],
+  "ACCOMPANIES": [
+    "accompanies"
+  ],
+  "CONTROLS": [
+    "controls"
+  ],
+  "ORDERS_TO_STAY": [
+    "orders_to_stay"
+  ],
+  "SINGS_LULLABY_TO": [
+    "sings_lullaby_to"
+  ],
+  "MUTTERS_TIME": [
+    "mutters_time"
+  ],
+  "NOTIFIES": [
+    "notifies"
+  ],
+  "DEDUCTED_POINTS": [
+    "deducted_points"
+  ],
+  "MENDED": [
+    "mended"
+  ],
+  "THINKS_NOT_UNUSUAL": [
+    "thinks_not_unusual"
+  ],
+  "TICKLES": [
+    "tickles"
+  ],
+  "PECKS": [
+    "pecks"
+  ],
+  "COMMANDS_TO_COPY_DOWN_INFORMATION": [
+    "commands_to_copy_down_information"
+  ],
+  "EXPLAINS_BEZOAR_USE": [
+    "explains_bezoar_use"
+  ],
+  "IDENTIFIES_MONKSHOOD_AND_WOLFSBANE": [
+    "identifies_monkshood_and_wolfsbane"
+  ],
+  "TORTURES": [
+    "tortures"
+  ],
+  "ABYSMAL": [
+    "abysmal"
+  ],
+  "ACCUSING": [
+    "accusing"
+  ],
+  "CLUTCHES": [
+    "clutches"
+  ],
+  "NEVER_USED": [
+    "never_used"
+  ],
+  "HOSTS": [
+    "hosts"
+  ],
+  "STEAMRODERED": [
+    "steamrodered"
+  ],
+  "OUTLAWED": [
+    "outlawed"
+  ],
+  "CONJURED": [
+    "conjured"
+  ],
+  "ENABLES": [
+    "enables"
+  ],
+  "SQUEEZED_TOGATHER": [
+    "squeezed_togather"
+  ],
+  "PULLS_RING_OF": [
+    "pulls_ring_of"
+  ],
+  "BIT": [
+    "bit"
+  ],
+  "PELTS": [
+    "pelts"
+  ],
+  "IS_CAPTAIN_OF": [
+    "is_captain_of"
+  ],
+  "GIGGLING": [
+    "giggling"
+  ],
+  "MAKES_UP_A_BED_FOR": [
+    "makes_up_a_bed_for"
+  ],
+  "SLAYS": [
+    "slays"
+  ],
+  "HAS_ANTI_DARK_ARTS_SPELL": [
+    "has_anti_dark_arts_spell"
+  ],
+  "IS_WITH_ME_WHENEVER_I_GO": [
+    "is_with_me_whenever_i_go"
+  ],
+  "USED_FOR_WARDING_OFF": [
+    "used_for_warding_off"
+  ],
+  "ROUND_ON": [
+    "round_on"
+  ],
+  "SITS_IN_FRONT_OF": [
+    "sits_in_front_of"
+  ],
+  "EXPERIENCES_LURCH": [
+    "experiences_lurch"
+  ],
+  "BELIEVED_TO_BE_GOING_THROUGH": [
+    "believed_to_be_going_through"
+  ],
+  "FREEZES_IN_PLACE": [
+    "freezes_in_place"
+  ],
+  "HAS_THE_RIGHT_TO_FACE": [
+    "has_the_right_to_face"
+  ],
+  "DEFIES": [
+    "defies"
+  ],
+  "HOLDS_OUT_ARM_TO_STOP": [
+    "holds_out_arm_to_stop"
+  ],
+  "STOLE_REMEMBRALL": [
+    "stole_remembrall"
+  ],
+  "PREDICTED_TO_BE_IN": [
+    "predicted_to_be_in"
+  ],
+  "BECAME_FRIENDS_WITH": [
+    "became_friends_with"
+  ],
+  "SHOVELS_PIE_INTO_MOUTH": [
+    "shovels_pie_into_mouth"
+  ],
+  "SHREDS": [
+    "shreds"
+  ],
+  "EXPECTED_TO_BE_LATE": [
+    "expected_to_be_late"
+  ],
+  "PLOTS_TO_EXPEL": [
+    "plots_to_expel"
+  ],
+  "PROPOSES_RELOCATION": [
+    "proposes_relocation"
+  ],
+  "EXPECTS_TO_STEAL_STONE": [
+    "expects_to_steal_stone"
+  ],
+  "MIGHT_BE_MISMATCHED_WITH": [
+    "might_be_mismatched_with"
+  ],
+  "RECEIVES_LIST_OF_UNIFORM_REQUIREMENTS": [
+    "receives_list_of_uniform_requirements"
+  ],
+  "RELEAVED_BY": [
+    "releaved_by"
+  ],
+  "ESCAPED": [
+    "escaped"
+  ],
+  "CHANGES": [
+    "changes"
+  ],
+  "CUTS": [
+    "cuts"
+  ],
+  "IS_FASCINATED_BY": [
+    "is_fascinated_by"
+  ],
+  "IS_LARGER_THAN": [
+    "is_larger_than"
+  ],
+  "FEELS_MORE_HOME_THAN": [
+    "feels_more_home_than"
+  ],
+  "HANGS_OUT_WINDOW": [
+    "hangs_out_window"
+  ],
+  "REFERS_TO_BOOKS_AND_CLEVERNESS": [
+    "refers_to_books_and_cleverness"
+  ],
+  "ACCIDENTALLY_INTERRUPTS": [
+    "accidentally_interrupts"
+  ],
+  "WHEEDLES": [
+    "wheedles"
+  ],
+  "BEWITCHES": [
+    "bewitches"
+  ],
+  "REFERENCES_VICTIM": [
+    "references_victim"
+  ],
+  "DYES": [
+    "dyes"
+  ],
+  "DISCOURAGES_ALONE_TIME": [
+    "discourages_alone_time"
+  ],
+  "HAS_AFFECTED_BY": [
+    "has_affected_by"
+  ],
+  "INFORMS_OF_BAD_NEWS": [
+    "informs_of_bad_news"
+  ],
+  "RECKONS": [
+    "reckons"
+  ],
+  "RUFFLES_HAIR": [
+    "ruffles_hair"
+  ],
+  "BOARDED": [
+    "boarded"
+  ],
+  "DISBELIEVES": [
+    "disbelieves"
+  ],
+  "DRIVES": [
+    "drives"
+  ],
+  "MOCKS": [
+    "mocks"
+  ],
+  "SMELLED": [
+    "smelled"
+  ],
+  "TERRIFIES": [
+    "terrifies"
+  ],
+  "STOOD_ON_STOOL": [
+    "stood_on_stool"
+  ]
+}

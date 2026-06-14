@@ -1,0 +1,44 @@
+﻿# IDE
+.idea/
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 数据和模型
+data/
+models/
+model_cache/
+nltk_data/
+tokenizers/
+chunks_vector_store/
+qdrant_storage/
+
+# Neo4j
+neo4j_data/
+neo4j_logs/
+
+# 日志和报告
+logs/
+results/
+evaluation_reports/
+*.log
+
+# 运行时
+checkpoints/
+workspace_checkpoints/
+graphs/
+
+# 配置
+.env
+rag_hyperparameters.json
+
+# Docker
+.dockerignore
+docker-compose.yml

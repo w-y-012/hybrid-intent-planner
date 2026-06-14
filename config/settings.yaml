@@ -1,0 +1,12 @@
+ragas:
+  metrics: ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
+  threshold:
+    faithfulness: 0.80
+    answer_relevancy: 0.75
+phoenix:
+  host: "localhost"
+  port: 6006
+paths:
+  trace_log: "logs/traces.jsonl"
+  eval_report: "logs/eval_report.csv"
+  negative_samples: "data/negative_samples.jsonl"
